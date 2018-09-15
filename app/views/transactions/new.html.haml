@@ -1,0 +1,7 @@
+= form_for Transaction.new do |f|
+  = f.text_field :name
+
+
+  = f.submit "Add Transaction"
+
+  = link_to 'Cancel', transactions_path

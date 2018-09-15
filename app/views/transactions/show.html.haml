@@ -1,0 +1,13 @@
+%table.table.table-bordered
+  %thead
+    %tr
+      %th Team
+      %th Player 1
+      %th Player 2
+      %th Score
+
+  %tbody
+  - @transactions.each do |transaction|
+    %tr
+      %td= transaction.vendor
+      

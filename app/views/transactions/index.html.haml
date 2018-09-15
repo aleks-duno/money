@@ -1,0 +1,33 @@
+= flash[:notice]
+%table.table.table-striped.table-bordered
+  %thead
+    %tr
+      %th Date
+      %th Expense
+      %th Vendor
+      %th Currency
+      %th Amount
+      %th Amount in CDN
+      %th Purpose
+      %th Account Name
+      
+
+  %tbody
+  - @transactions.each do |transaction|
+    %tr
+      %td= transaction.date
+      %td= transaction.expense
+      %td= transaction.vendor
+      %td= transaction.currency
+      %td= transaction.amount
+      %td= transaction.amount_cdn
+      %td= transaction.purpose
+      %td= transaction.account_name
+
+%div
+  %h4 Import that data!
+  = form_tag 'transactions/import', multipart: true do 
+    = file_field_tag :file
+    = submit_tag "Import CSV"
+
+
