@@ -22,5 +22,8 @@ module Money
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+    config.middleware.use OmniAuth::Builder do
+        provider :github, '00eacbb37493967fe840', '30c8001a2e4a2ee725b09882012d45000e9ddd13'
+    end
   end
 end

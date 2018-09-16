@@ -15,3 +15,7 @@
 /log/*
 !/log/.keep
 /tmp
+
+#contains client ID and client secret
+/config/application.rb
+

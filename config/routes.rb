@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
-  root 'transactions#index'
+
+  get 'auth/github', :as => 'github_auth'
+  match '/auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
+  match '/logout', to: 'sessions#destroy', via: [:get, :post]
+  
+  root 'home#index'
 
   get 'transactions/index'
     get 'transactions/import'
